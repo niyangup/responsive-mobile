@@ -1,0 +1,232 @@
+/* 初始化内外边距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  width: 100vw;
+  height: 80px;
+  padding: 0 10vw;
+  box-sizing: border-box;
+  background: rgb(249, 249, 249);
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.header .logo {
+  width: 70px;
+  height: 100%;
+  background: url("../imgs/logo.png") center/contain no-repeat;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul {
+  display: flex;
+}
+
+.header nav ul li {
+  line-height: 80px;
+  padding: 0 1.2vw;
+  position: relative;
+}
+
+.header nav ul li a {
+  color: #777;
+}
+
+.header nav ul li:hover::after {
+  width: 100%;
+}
+
+.header nav ul li::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #222;
+  transition: 0.5s;
+}
+
+.header nav button {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background: url("../imgs/btn.png") center no-repeat;
+}
+
+.banner {
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.banner ul {
+  width: 300vw;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  left: 0;
+  transition: 1s;
+}
+
+.banner ul li {
+  width: 100vw;
+  height: 100%;
+}
+
+.banner ul li:nth-child(1) {
+  background: url("../imgs/1.jpg") center no-repeat;
+}
+
+.banner ul li:nth-child(2) {
+  background: url("../imgs/2.jpg") center no-repeat;
+}
+
+.banner ul li:nth-child(3) {
+  background: url("../imgs/3.jpg") center no-repeat;
+}
+
+
+.hot {
+  margin: 50px 0;
+}
+
+.hot .title {
+  text-align: center;
+  margin-bottom: 20px;
+
+  color: #bbb;
+}
+
+.hot .title h2 {
+  font-size: 36px;
+  font-weight: 100;
+}
+
+.hot .list {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.hot .list > div {
+  /*width: 20%;*/
+  margin: 15px 0;
+  padding: 20px 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.hot .list > div > img {
+  width: 90%;
+  opacity: 0.9;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.hot .list > div > img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.hot .list > div > p {
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+
+footer {
+  width: 100%;
+  height: 500px;
+  background: url("../imgs/bottom.jpg") center/cover no-repeat;
+}
+
+@media all and (max-width: 576px) {
+  .header nav button {
+    display: block;
+  }
+
+  .header nav ul {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .header {
+    height: 50px;
+  }
+
+  nav li {
+    line-height: 50px;
+  }
+
+  .banner {
+    margin-top: 50px;
+  }
+
+  footer {
+    height: 400px;
+  }
+}
+
+@media all and (min-width: 760px) {
+  .hot .list {
+    width: 720px;
+  }
+
+  .hot .list div {
+    width: 46%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .hot .list {
+    width: 960px;
+  }
+
+  .hot .list div {
+    width: 30%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .hot .list {
+    width: 1140px;
+  }
+
+  .hot .list div {
+    width: 22%;
+  }
+}
